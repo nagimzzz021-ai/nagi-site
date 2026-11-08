@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nagi / Moroka Natsuki</title>
+<meta name="description" content="Nagi / Moroka Natsuki の作品サイト。音楽、映像、アートワークを主なメディアとする。">
+<link rel="canonical" href="https://nagi-zzz.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nagi">
+<meta property="og:title" content="Nagi / Moroka Natsuki">
+<meta property="og:description" content="Nagi / Moroka Natsuki の作品サイト。音楽、映像、アートワークを主なメディアとする。">
+<meta property="og:url" content="https://nagi-zzz.com/">
+<meta property="og:image" content="https://nagi-zzz.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Moroka Natsuki","alternateName":"Nagi","url":"https://nagi-zzz.com/","sameAs":["https://www.instagram.com/mnmnmn_nagi/","https://x.com/Nagi_____zzz"]}</script>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Noto+Sans+JP:wght@300;400&display=swap">
+<style>
+/* Layout: pale mist scattered with faint circles; works hang as images only, and details open on click */
+:root{
+  --mist:#d8d7d6;   /* 明るいグレーの地 */
+  --ink:#1e1e20;    /* 黒に近い、でも真っ黒ではない墨色 */
+  --soft:#5f5f63;
+  --rule:rgba(30,30,32,.14);
+  --c1:#f1cfb9;  /* 杏（桃をオレンジ寄りに） */
+  --c2:#cde0ea;  /* 水 */
+  --c3:#f5d8bf;  /* 淡橙 */
+  --c4:#d9e8de;  /* 若葉 */
+  --hush:grayscale(.74) contrast(.86) brightness(1.06);  /* 普段のサムネイル：グレーに寄せて背景になじませる */
+  --bloom:grayscale(0) contrast(1) brightness(1);        /* カーソルが当たったとき：作品本来の色へ */
+  --vivid:saturate(1.3);  /* 背景の図形（円・帯・線）の色の鮮やかさ。1 で元の淡さ */
+  --spd:1.15;  /* 背景の図形の動きの速さ。1 で元の速さ */
+  /* 昼（朝6時〜夕方6時）：地のほうが明るく、図形は色を重ねて沈む */
+  --w1:rgba(190,206,216,.38);--w2:rgba(226,200,182,.34);--w3:rgba(200,214,204,.34);
+  --lift:#f3f2f0;--blend:multiply;--sk:1;--kw:.6;--kl:.62;
+  --chip:rgba(242,241,239,.86);--paper:#f1f0ee;--sheet:rgba(250,249,251,.96);--bar:rgba(236,235,233,.86);
+  --card:rgba(255,255,255,.5);--field:rgba(255,255,255,.7);--wash:rgba(30,30,32,.06);--wash2:rgba(42,44,58,.03);
+  --shadow:rgba(30,30,32,.45);--danger:#8a2f2f;
+  /* 日本語はすべて角ゴシックの Noto Sans JP にそろえる（英字は Jost、その中の日本語も Noto Sans JP で出す） */
+  --f-latin:"Jost","Noto Sans JP","Helvetica Neue",Arial,sans-serif;
+  --f-sans:"Jost","Noto Sans JP","Helvetica Neue",Arial,sans-serif;
+  --f-mincho:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+  --f-body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
+  color-scheme:light;
+}
+/* 夜（夕方6時〜朝6時）：明るさの関係が逆になり、暗い地に図形が光のように浮かぶ */
+:root[data-tod="night"]{
+  --mist:#1b1c20;--ink:#e9e7e3;--soft:#a3a3a8;--rule:rgba(233,231,227,.16);
+  --w1:rgba(70,92,108,.3);--w2:rgba(104,78,64,.26);--w3:rgba(72,96,82,.24);
+  --lift:#2e3036;--blend:screen;--sk:.32;--kw:.1;--kl:.2;
+  --vivid:saturate(1.5) brightness(.68);  /* 夜は色を少し沈めてから重ね、白っぽく飛ばないようにする */
+  --hush:grayscale(.74) contrast(.9) brightness(.9);
+  --chip:rgba(27,28,32,.84);--paper:#1b1c20;--sheet:rgba(31,32,37,.97);--bar:rgba(31,32,37,.9);
+  --card:rgba(255,255,255,.04);--field:rgba(255,255,255,.07);--wash:rgba(255,255,255,.06);--wash2:rgba(255,255,255,.03);
+  --shadow:rgba(0,0,0,.55);--danger:#e3908c;
+  color-scheme:dark;
+}
+:root[data-tod="night"] dialog::backdrop{background:rgba(10,10,12,.78)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--mist);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.9;letter-spacing:.02em;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+
+/* 背景：グレーの地に、淡い色だまりがそれぞれ別の周期で流れて混ざり合う */
+@property --ax{syntax:"<percentage>";inherits:false;initial-value:20%}
+@property --ay{syntax:"<percentage>";inherits:false;initial-value:20%}
+@property --bx{syntax:"<percentage>";inherits:false;initial-value:80%}
+@property --by{syntax:"<percentage>";inherits:false;initial-value:30%}
+@property --cx{syntax:"<percentage>";inherits:false;initial-value:30%}
+@property --cy{syntax:"<percentage>";inherits:false;initial-value:85%}
+@property --pa{syntax:"<color>";inherits:false;initial-value:#bcd3e0}
+@property --pb{syntax:"<color>";inherits:false;initial-value:#eec7af}
+.air{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;
+  background:
+    radial-gradient(48% 55% at var(--ax) var(--ay),var(--w1),transparent 70%),
+    radial-gradient(50% 48% at var(--bx) var(--by),var(--w2),transparent 70%),
+    radial-gradient(42% 46% at var(--cx) var(--cy),var(--w3),transparent 70%),
+    var(--mist);
+  animation:ma calc(23s / var(--spd)) ease-in-out infinite alternate,mb calc(29s / var(--spd)) ease-in-out infinite alternate,mc calc(19s / var(--spd)) ease-in-out infinite alternate}
+@keyframes ma{0%{--ax:15%;--ay:15%}35%{--ax:55%;--ay:35%}70%{--ax:30%;--ay:70%}100%{--ax:70%;--ay:20%}}
+@keyframes mb{0%{--bx:85%;--by:25%}40%{--bx:40%;--by:15%}75%{--bx:60%;--by:60%}100%{--bx:20%;--by:40%}}
+@keyframes mc{0%{--cx:25%;--cy:85%}30%{--cx:70%;--cy:70%}65%{--cx:45%;--cy:40%}100%{--cx:15%;--cy:55%}}
+
+/* 図形：円と、背景を埋めるほど太いグラデーションの帯。どれも二色のあいだを行き来するグラデーションを持ち、
+   重なった部分は乗算で混ざって、そこにしかない色が生まれる */
+.g{position:absolute;pointer-events:none;mix-blend-mode:var(--blend);opacity:calc(var(--op,.6) * var(--sk));
+  animation:breathe calc(var(--b,9s) / var(--spd)) ease-in-out infinite alternate,turn calc(var(--r,40s) / var(--spd)) ease-in-out infinite alternate,var(--k,poles) calc(var(--p,14s) / var(--spd)) ease-in-out infinite alternate;
+  animation-delay:var(--o,0s)}
+.g.rev{animation-direction:alternate,alternate-reverse,alternate-reverse}
+.g.c{border-radius:50%;background:radial-gradient(circle at 32% 30%,var(--pa),var(--pb) 85%)}
+#waves{position:absolute;left:-90px;top:-90px;width:calc(100% + 180px);height:calc(100% + 180px);mix-blend-mode:var(--blend);opacity:var(--kw);filter:blur(46px) var(--vivid)}
+#lines{position:absolute;left:-90px;top:-90px;width:calc(100% + 180px);height:calc(100% + 180px);mix-blend-mode:var(--blend);opacity:var(--kl);filter:blur(16px) var(--vivid)}
+.air .g.c,.hero-bubble{filter:blur(clamp(12px,2.4vmax,34px)) var(--vivid) hue-rotate(var(--hs,0deg))}
+/* 霞の円：大きくぼかした円に、円の中だけの淡いノイズをのせる */
+.orb{position:absolute;pointer-events:none;mix-blend-mode:var(--blend);opacity:calc(var(--op,.5) * var(--sk));
+  animation:breathe calc(var(--b,11s) / var(--spd)) ease-in-out infinite alternate;animation-delay:var(--o,0s)}
+.orb::before{content:"";position:absolute;inset:0;border-radius:50%;filter:blur(clamp(30px,5vmax,70px)) var(--vivid) hue-rotate(var(--hs,0deg));
+  background:radial-gradient(circle at 36% 34%,var(--pa),var(--pb) 80%);
+  animation:var(--k,poles) calc(var(--p,16s) / var(--spd)) ease-in-out infinite alternate;animation-delay:var(--o,0s)}
+.orb::after{content:"";position:absolute;inset:-6%;background:var(--noise);background-size:200px 200px;mix-blend-mode:soft-light;opacity:.9;
+  -webkit-mask:radial-gradient(circle,#000 30%,transparent 68%);mask:radial-gradient(circle,#000 30%,transparent 68%)}
+.orb.o1{width:34vmax;height:34vmax;left:30vw;top:8vh;--d:41s;--b:12s;--p:19s;--k:poles2;--op:.5}
+.orb.o2{width:24vmax;height:24vmax;left:-4vw;top:20vh;--d:33s;--b:10s;--p:15s;--k:poles3;--o:-6s;--op:.55}
+.orb.o3{width:28vmax;height:28vmax;right:4vw;top:52vh;--d:38s;--b:13s;--p:22s;--o:-11s;--op:.5}
+.orb.o4{width:16vmax;height:16vmax;left:46vw;bottom:-2vh;--d:29s;--b:9s;--p:13s;--k:poles2;--o:-4s;--op:.55}
+/* 下へスクロールするほど、明るい霞を重ねていく */
+.lift{position:absolute;inset:0;pointer-events:none;background:var(--lift);opacity:0}
+/* 昼と夜が切り替わる瞬間だけ、背景をゆっくり溶かす幕 */
+.todveil{position:absolute;inset:0;pointer-events:none;opacity:0}
+/* ノイズ：しっかり見える粒子を、全体に一枚かける（文字や作品の下） */
+.grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;opacity:.7;background-size:240px 240px}
+.air .g:nth-child(2){width:30vmax;height:30vmax;left:2vw;top:48vh;--d:34s;--b:10s;--p:17s;--op:.55}
+.air .g:nth-child(3){width:10vmax;height:10vmax;left:38vw;top:30vh;--d:22s;--b:7s;--p:10s;--k:poles2;--o:-2s;--op:.65}
+.air .g:nth-child(4){width:44vmax;height:44vmax;right:-12vmax;top:-12vmax;--d:40s;--b:13s;--p:21s;--k:poles3;--o:-10s;--op:.42}
+.air .g:nth-child(5){width:16vmax;height:16vmax;left:60vw;top:58vh;--d:29s;--b:10s;--p:14s;--k:poles2;--o:-7s;--op:.5}
+.air .g:nth-child(6){width:8vmax;height:8vmax;left:20vw;top:10vh;--d:25s;--b:8s;--p:12s;--k:poles3;--o:-3s;--op:.6}
+@keyframes poles {from{--pa:#bcd3e0;--pb:#eec7af}to{--pa:#eec7af;--pb:#bcd3e0}}
+@keyframes poles2{from{--pa:#eec7af;--pb:#c7dacd}to{--pa:#c7dacd;--pb:#eec7af}}
+@keyframes poles3{from{--pa:#c7dacd;--pb:#bcd3e0}to{--pa:#bcd3e0;--pb:#c7dacd}}
+@keyframes drift{0%{translate:0 0}33%{translate:4vmax -3vmax}66%{translate:-2vmax -4vmax}100%{translate:-3vmax 3vmax}}
+@keyframes breathe{from{scale:.97}to{scale:1.06}}
+@keyframes turn{from{rotate:var(--r0,0deg)}to{rotate:var(--r1,0deg)}}
+
+.wrap{max-width:1080px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:28px}
+.mark{font-family:var(--f-latin);font-weight:400;font-size:18px;letter-spacing:.34em;text-decoration:none}
+nav{display:flex;gap:26px;font-family:var(--f-sans);font-weight:300;font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+nav a{text-decoration:none;color:var(--soft)}
+nav a:hover{color:var(--ink)}
+
+.hero{position:relative;text-align:center;padding-block:clamp(80px,14vw,170px) clamp(72px,11vw,130px)}
+.hero-bubble{z-index:-1;width:clamp(240px,40vw,460px);height:auto;aspect-ratio:1;max-width:100%;
+  left:0;right:0;margin-inline:auto;top:clamp(30px,6vw,70px);--op:.5;--d:18s;--b:6s;--p:11s}
+.hero h1{font-family:var(--f-latin);font-weight:300;font-size:clamp(44px,9vw,96px);line-height:1;letter-spacing:.14em;padding-left:.14em;margin:0}
+.hero .name{font-family:var(--f-latin);font-weight:300;font-size:clamp(16px,2vw,20px);letter-spacing:.36em;padding-left:.36em;margin:22px 0 0;color:var(--soft)}
+.hero .role{font-family:var(--f-sans);font-weight:300;font-size:13px;letter-spacing:.3em;padding-left:.3em;text-transform:uppercase;color:var(--soft);margin:10px 0 0}
+.hero p.lead{font-family:var(--f-mincho);font-size:clamp(16px,2vw,19px);line-height:2.1;margin:44px 0 0;max-width:26em}
+
+.label{font-family:var(--f-sans);font-weight:400;font-size:13px;letter-spacing:.48em;text-transform:uppercase;color:var(--soft)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding-block:18px}
+.sec-head span:last-child{font-family:var(--f-sans);font-weight:300;font-size:12px;color:var(--soft);letter-spacing:.14em;font-variant-numeric:tabular-nums}
+
+/* Works：画像だけを置く */
+/* 作品は一点ずつ、中央に縦一列で。次の作品までたっぷり間をあける */
+.gallery{display:flex;flex-direction:column;align-items:center;gap:clamp(110px,16vw,200px);padding-block:clamp(72px,10vw,130px) clamp(90px,12vw,150px)}
+.piece{position:relative;display:block;width:min(100%,400px);padding:0;border:0;background:none;cursor:pointer;transition:transform .8s ease}
+.piece:hover,.piece:focus-visible{transform:translateY(-4px)}
+.piece.wide{width:min(100%,560px)}
+.more{display:flex;justify-content:center;padding-block:0 clamp(96px,12vw,150px)}
+.more a{font-family:var(--f-sans);font-weight:400;font-size:13px;letter-spacing:.42em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:14px 4px;border-bottom:1px solid var(--rule)}
+.more a:hover{border-color:var(--ink)}
+/* Archive：これまでの作品を振り返るページ */
+.archive{padding-block:clamp(48px,8vw,96px) clamp(110px,14vw,170px)}
+.archive h2{font-family:var(--f-latin);font-weight:300;font-size:clamp(40px,7vw,72px);letter-spacing:.1em;margin:0 0 8px}
+.archive .sub{color:var(--soft);font-size:13px;margin:0 0 clamp(48px,7vw,80px)}
+.alist{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:clamp(40px,6vw,72px) clamp(24px,4vw,48px)}
+.aitem{min-width:0;padding:0;border:0;background:none;text-align:left;color:inherit;font:inherit;cursor:pointer;display:flex;flex-direction:column;gap:14px}
+.aitem .thumb{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--wash);display:flex;align-items:center;justify-content:center}
+.aitem img,.aitem video{width:100%;height:100%;object-fit:cover;filter:var(--hush);transition:transform .8s ease,filter 1.6s ease}
+.aitem:hover img,.aitem:hover video,.aitem:focus-visible img,.aitem:focus-visible video,.aitem.on img,.aitem.on video{filter:var(--bloom)}
+.aitem:hover img,.aitem:hover video{transform:scale(1.03)}
+/* 動画の作品には、小さな再生の印 */
+.play{position:absolute;left:12px;bottom:12px;z-index:1;width:30px;height:30px;border-radius:50%;background:var(--chip);pointer-events:none}
+.play::after{content:"";position:absolute;left:12px;top:9px;border-left:9px solid var(--ink);border-top:6px solid transparent;border-bottom:6px solid transparent}
+.aitem .t{font-family:var(--f-latin);font-weight:300;font-size:20px;letter-spacing:.06em;line-height:1.3}
+.aitem .t.ja{font-family:var(--f-body);font-size:17px}
+.aitem .m{font-family:var(--f-sans);font-weight:300;font-size:12px;letter-spacing:.1em;color:var(--soft)}
+.back{display:inline-block;margin-top:clamp(64px,8vw,96px);font-family:var(--f-sans);font-size:13px;letter-spacing:.36em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--rule);padding:10px 2px}
+.piece img,.piece video{display:block;width:100%;max-width:100%;height:auto;filter:var(--hush);transition:filter 1.6s ease;box-shadow:0 30px 60px -36px var(--shadow)}
+.piece video{aspect-ratio:var(--ar,auto);object-fit:cover;background:var(--wash)}
+.piece:hover img,.piece:hover video,.piece:focus-visible img,.piece:focus-visible video,.piece.on img,.piece.on video{filter:var(--bloom)}
+/* カーソルが当たると、作品のすぐ下（左端そろえ）にタイトルが出る。画像には重ねない */
+.cap{position:absolute;left:0;top:calc(100% + 16px);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:var(--f-latin);font-weight:300;font-size:13px;letter-spacing:.14em;line-height:1.5;text-align:left;color:var(--ink);pointer-events:none;opacity:0;transform:translateY(6px);transition:opacity .5s ease,transform .5s ease}
+.cap.ja{font-family:var(--f-body);letter-spacing:.08em}
+/* 写真・動画がほかにもある作品には、数を小さく添える */
+.cnt{margin-left:.7em;font-family:var(--f-sans);font-size:.8em;letter-spacing:.08em;color:var(--soft)}
+.piece:hover .cap,.piece:focus-visible .cap,.piece.on .cap{opacity:1;transform:none;transition:opacity .9s ease .35s,transform .9s ease .35s}
+
+.about,.contact{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;border-top:1px solid var(--rule);padding-block:64px}
+.about p{margin:0 0 1.2em;max-width:34em;font-size:15px;line-height:2.1}
+.todo{font-size:12px;color:var(--soft);border-left:1px solid var(--rule);padding-left:10px}
+.contact ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-family:var(--f-sans);font-weight:300;font-size:16px;letter-spacing:.1em}
+.contact a{text-decoration:none;border-bottom:1px solid var(--rule)}
+.contact a:hover{border-color:var(--ink)}
+.handle{margin-left:14px;font-size:13px;color:var(--soft);letter-spacing:.04em}
+.handle.mail{user-select:all;-webkit-user-select:all;color:var(--ink)}
+.copy{margin-left:12px;font-family:var(--f-sans);font-weight:300;font-size:11px;letter-spacing:.2em;text-transform:uppercase;background:none;border:1px solid var(--rule);color:var(--soft);padding:3px 10px;cursor:pointer}
+.copy:hover{color:var(--ink);border-color:var(--ink)}
+footer{border-top:1px solid var(--rule);padding-block:28px 48px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--f-sans);font-weight:300;font-size:11px;letter-spacing:.22em;color:var(--soft)}
+
+/* 詳細：クリックで開く */
+dialog{border:0;padding:0;background:var(--sheet);color:var(--ink);width:min(1000px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;box-shadow:0 40px 90px -40px rgba(42,44,58,.45)}
+dialog::backdrop{background:rgba(242,240,243,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.detail{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+.stage{min-width:0;display:flex;flex-direction:column;background:var(--wash2)}
+.detail figure{position:relative;flex:1;margin:0;display:flex;align-items:center;justify-content:center;padding:clamp(16px,3vw,32px)}
+/* ひとつの作品に写真・動画が複数あるときの、小さな一覧 */
+.strip{display:flex;gap:8px;overflow-x:auto;padding:0 clamp(16px,3vw,32px) clamp(16px,3vw,24px)}
+.strip button{position:relative;flex:none;width:56px;height:56px;padding:0;border:1px solid transparent;background:var(--wash);cursor:pointer;opacity:.55;transition:opacity .3s ease,border-color .3s ease}
+.strip button:hover,.strip button[aria-current="true"]{opacity:1}
+.strip button[aria-current="true"]{border-color:var(--ink)}
+.strip img,.strip video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.strip .sp{position:absolute;left:6px;bottom:6px;border-left:7px solid #fff;border-top:4.5px solid transparent;border-bottom:4.5px solid transparent;filter:drop-shadow(0 0 2px rgba(0,0,0,.6))}
+.detail figure img{display:block;max-width:100%;max-height:72vh;width:auto;height:auto}
+.detail figure video{display:block;width:100%;max-width:100%;max-height:72vh;aspect-ratio:var(--ar,16/9);background:transparent}
+/* 重い動画を読み込んでいるあいだの表示 */
+.vload{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.vload span{font-family:var(--f-sans);font-size:12px;letter-spacing:.18em;color:var(--ink);background:var(--chip);padding:8px 14px;font-variant-numeric:tabular-nums}
+/* サムネイルがまだない動画の仮の枠 */
+.mph{display:flex;align-items:center;justify-content:center;width:100%;max-width:100%;aspect-ratio:var(--ar,16/9);background:var(--wash);font-family:var(--f-sans);font-size:11px;letter-spacing:.3em;color:var(--soft)}
+.aitem .mph{height:100%;aspect-ratio:auto}
+.info{min-width:0;padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;gap:14px}
+.info h2{font-family:var(--f-latin);font-weight:300;letter-spacing:.06em;font-size:clamp(32px,4vw,44px);line-height:1.1;margin:0;letter-spacing:.03em;text-wrap:balance}
+.info h2.ja{font-family:var(--f-mincho);font-size:clamp(24px,3vw,32px)}
+.info .medium{font-family:var(--f-sans);font-weight:300;font-size:12px;letter-spacing:.12em;color:var(--soft)}
+.info p{margin:0}
+#vText{white-space:pre-line}  /* 説明文は、書いたとおりに改行して見せる */
+.nav-row{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--rule)}
+.nav-row button{font-family:var(--f-sans);font-weight:300;font-size:12px;letter-spacing:.2em;text-transform:uppercase;background:none;border:0;color:var(--ink);cursor:pointer;padding:8px 4px}
+.nav-row button:hover{color:var(--soft)}
+
+/* 編集画面（編集できる人だけ） */
+.editor{padding-block:clamp(48px,8vw,96px) clamp(110px,14vw,170px)}
+.editor h2{font-family:var(--f-latin);font-weight:300;font-size:clamp(40px,7vw,72px);letter-spacing:.1em;margin:0 0 8px}
+.editor .sub{color:var(--soft);font-size:13px;margin:0 0 32px}
+.ed-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;padding-block:12px;background:var(--bar);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.ed-add,.ed-save,.ed-row button{font-family:var(--f-sans);font-size:12px;letter-spacing:.16em;border:1px solid var(--ink);background:none;color:var(--ink);padding:10px 16px;cursor:pointer}
+.ed-add{position:relative}
+.ed-add input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+.ed-save{background:var(--ink);color:var(--paper)}
+.ed-save:disabled{opacity:.35;cursor:default}
+.ed-note{font-size:12px;color:var(--soft);margin:12px 0 24px}
+.ed-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px}
+.ed-row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding:18px;background:var(--card);border:1px solid var(--rule)}
+.ed-thumb{position:relative;width:96px;height:120px}
+.ed-thumb img,.ed-thumb video{width:100%;height:100%;object-fit:cover;display:block;background:var(--wash)}
+.ed-badge{position:absolute;left:6px;bottom:6px;font-family:var(--f-sans);font-size:10px;letter-spacing:.16em;background:var(--chip);color:var(--ink);padding:1px 6px}
+.ed-store{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--soft);margin:-12px 0 24px;font-variant-numeric:tabular-nums}
+.ed-clean{font-family:var(--f-sans);font-size:11px;letter-spacing:.12em;border:1px solid var(--rule);background:none;color:var(--ink);padding:5px 12px;cursor:pointer}
+.ed-clean:disabled{opacity:.4;cursor:default}
+.ed-tod{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--soft);margin:-12px 0 24px}
+.ed-more{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.ed-more-l{font-size:11px;letter-spacing:.12em;color:var(--soft)}
+.ed-more-list{display:flex;flex-wrap:wrap;gap:10px}
+.ed-mi{display:flex;flex-direction:column;gap:4px;width:84px}
+.ed-mi-t{position:relative;width:84px;height:84px}
+.ed-mi-t img,.ed-mi-t video{width:100%;height:100%;object-fit:cover;display:block;background:var(--wash)}
+.ed-mi-a{display:flex;gap:4px}
+.ed-row .ed-mi-a button{padding:2px 6px;font-size:10px;letter-spacing:.04em}
+.ed-mi-add{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center;border:1px dashed var(--rule);font-size:11px;letter-spacing:.08em;color:var(--soft);cursor:pointer}
+.ed-mi-add input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+.ed-fields{min-width:0;display:flex;flex-direction:column;gap:10px}
+.ed-fields label{display:flex;flex-direction:column;gap:4px;font-size:11px;letter-spacing:.12em;color:var(--soft)}
+.ed-fields input[type=text],.ed-fields textarea{font:inherit;font-size:14px;letter-spacing:.02em;color:var(--ink);background:var(--field);border:1px solid var(--rule);padding:8px 10px;width:100%;min-width:0}
+.ed-fields textarea{min-height:72px;resize:vertical}
+.ed-checks{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--soft)}
+.ed-checks label{flex-direction:row;align-items:center;gap:6px;letter-spacing:.04em}
+.ed-acts{display:flex;gap:8px;flex-wrap:wrap}
+.ed-row button{padding:6px 12px;font-size:11px;border-color:var(--rule)}
+.ed-row button.danger{color:var(--danger);border-color:color-mix(in srgb,var(--danger) 40%,transparent)}
+.ed-row .busy{font-size:12px;color:var(--soft)}
+.edlink{margin-left:18px;color:var(--soft);text-decoration:none;border-bottom:1px solid var(--rule)}
+@media (max-width:560px){.ed-row{grid-template-columns:72px minmax(0,1fr)}.ed-thumb{width:72px;height:90px}}
+@media (max-width:720px){
+  .gallery{gap:96px}
+  .about,.contact{grid-template-columns:1fr;gap:16px}
+  .detail{grid-template-columns:1fr}
+  .detail figure img,.detail figure video{max-height:52vh}
+}
+@media (prefers-reduced-motion:reduce){.air,.g,.grain,.orb,.orb::before{animation:none}html{scroll-behavior:auto}.piece,.piece img,.piece video,.cap,.piece:hover .cap,.piece.on .cap,.aitem img,.aitem video{transition:none}}
+</style>
+<script>
+// 見ている人の時計で、朝6時〜夕方6時は昼、それ以外は夜の見え方にする（最初の描画より前に決める）
+(function(){document.documentElement.lang="ja";var h=new Date().getHours();document.documentElement.dataset.tod=(h>=6&&h<18)?"day":"night"})();
+</script>
+</head>
+<body>
+<div class="air" aria-hidden="true"><canvas id="waves"></canvas><canvas id="lines"></canvas><i class="g c"></i><i class="g c rev"></i><i class="g c rev"></i><i class="g c"></i><i class="g c rev"></i><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i><i class="orb o4"></i><div class="todveil" id="todveil"></div><div class="lift" id="lift"></div><div class="grain" id="grain"></div></div>
+
+<div class="wrap">
+  <header>
+    <a class="mark" href="#top">NAGI</a>
+    <nav aria-label="サイト内"><a href="#works">Works</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <div id="home">
+  <section class="hero" id="top">
+    <i class="g c rev hero-bubble" aria-hidden="true"></i>
+    <h1>Nagi</h1>
+    <div class="name">MOROKA NATSUKI</div>
+    <div class="role">Music &amp; Artwork</div>
+  </section>
+
+  <section id="works">
+    <div class="sec-head"><span class="label">Works</span><span id="count"></span></div>
+    <div class="gallery" id="gallery"></div>
+    <div class="more" id="more"><a href="#archive">All works →</a></div>
+  </section>
+
+  <section class="about" id="about">
+    <span class="label">About</span>
+    <div>
+      <p>Nagi / Moroka Natsuki<br>音楽、映像、アートワークを主なメディアとする。</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <span class="label">Contact</span>
+    <ul>
+      <li><a href="https://www.instagram.com/mnmnmn_nagi/" target="_blank" rel="noopener">Instagram</a> <span class="handle">@mnmnmn_nagi</span></li>
+      <li><a href="https://x.com/Nagi_____zzz" target="_blank" rel="noopener">X</a> <span class="handle">@Nagi_____zzz</span></li>
+      <li><span>Email</span> <span class="handle mail" id="mail">Nagi.mzzz021@gmail.com</span> <button type="button" class="copy" id="copyMail">Copy</button></li>
+    </ul>
+  </section>
+
+  </div>
+
+  <section class="archive" id="archive-view" hidden>
+    <h2>Archive</h2>
+    <p class="sub">これまでの作品</p>
+    <div class="alist" id="alist"></div>
+    <a class="back" href="#top">← Back</a>
+  </section>
+
+
+  <footer><span>© 2026 NAGI / MOROKA NATSUKI</span><span>MUSIC &amp; ARTWORK</span></footer>
+</div>
+
+<dialog id="view" aria-labelledby="vTitle">
+  <div class="detail">
+    <div class="stage"><figure><img id="vImg" alt=""><video id="vVid" controls playsinline loop preload="metadata" hidden></video><div class="vload" id="vLoad" hidden><span id="vLoadT" aria-live="polite"></span></div></figure><div class="strip" id="vStrip" hidden></div></div>
+    <div class="info">
+      <h2 id="vTitle"></h2>
+      <div class="medium" id="vMedium"></div>
+      <p id="vText"></p>
+      <div class="nav-row">
+        <button type="button" id="vPrev">← Prev</button>
+        <button type="button" id="vClose">Close</button>
+        <button type="button" id="vNext">Next →</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+const WORKS=[{"img":"media/279d5c1cd327b8e6760dc482c02e5491.jpg","t":"CIRCLE_study_1106","ja":false,"m":"movie","d":"","pal":["#97a28f","#010101","#000000","#000000","#000000"],"wide":true,"alt":"","video":"media/e385ee370bb13e887c593cb38147692e.mp4","vasset":"e385ee370bb13e887c593cb38147692e","asset":"279d5c1cd327b8e6760dc482c02e5491","ar":1.7778},{"img":"media/92df95b8e12055366c437101bc50423a.jpg","t":"CIRCLE_study_1102","ja":false,"m":"movie","d":"","pal":["#666666","#0b0b0b","#020202","#000000","#000000"],"wide":true,"alt":"","video":"media/2ce070702fddd793ccc4a90da91fa995.mp4","vasset":"2ce070702fddd793ccc4a90da91fa995","asset":"92df95b8e12055366c437101bc50423a","ar":1.7778},{"img":"media/56ad25efd501c29048ace55df472e82f.jpg","t":"CIRCLE_study_1101","ja":false,"m":"movie","d":"","pal":["#ffffff","#000000","#000000","#000000","#000000"],"wide":true,"alt":"","video":"media/979f5d342b7c4aeb1ddd78416f0fba70.mp4","vasset":"979f5d342b7c4aeb1ddd78416f0fba70","asset":"56ad25efd501c29048ace55df472e82f","ar":1.7778},{"img":"media/7bd7270ea472f62b9bf048f74981dab8.jpg","asset":"7bd7270ea472f62b9bf048f74981dab8","t":"who's who","ja":false,"m":"水性ペン,油性ペン,鉛筆","d":"420mm×297mm\n\n”あの人”と話している時に、親しくなるほど”あの人”の印象が複雑になりその輪郭が掴めなくなってくることをテーマとした作品。\n\n物理的な距離が開くほど具象性が強くなり、近づくほど白と黒の地と図の関係に見え、人としての輪郭が弱まっていく感覚を目的に作成した。","pal":["#fbf3f3","#dcb899","#9e7149","#6d4627","#242321"],"wide":false,"alt":""},{"img":"media/c60bc3e427743082c27968c3feaff016.jpg","asset":"c60bc3e427743082c27968c3feaff016","t":"すきなままに！","ja":false,"m":"水性アクリルガッシュ","d":"455mm×380mm\n\n色と色のつながりを関係づけた時に空間が現れるのではないかという着想から作成した。\n物理的に混ざり合う顔料と視覚的に刺激するグラデーションの感覚から新しい感覚を追求することを目的とした。","pal":["#ded9bd","#b48981","#996a3e","#5d6a3b","#312e54"],"wide":false,"alt":""},{"img":"media/f02754fd775c648e329a2f248379b367.jpg","t":"fragile","ja":false,"m":"music,artworks","d":"日々の感傷から6つの音源を作成した。\n\n記憶の脆さをテーマに音というメディアに残した。\nまた、そのあやふやさを表現するために全10種類の異なるデザインジャケットを作成した。","pal":["#233a51","#1c294b","#152745","#152135","#14181f"],"wide":false,"alt":"","video":"media/fc8b73d9d131fc2467e8defe7debabbe.mp4","vasset":"fc8b73d9d131fc2467e8defe7debabbe","asset":"f02754fd775c648e329a2f248379b367","ar":0.7099,"more":[{"img":"media/4e13fb7ae70466a820947688eb925ed2.jpg","asset":"4e13fb7ae70466a820947688eb925ed2","pal":["#81705c","#203841","#1e353d","#102b4e","#1a161c"],"wide":true},{"img":"media/3f8c01c813d7facf25cc8ce5734ee830.jpg","asset":"3f8c01c813d7facf25cc8ce5734ee830","pal":["#7c7b8e","#2c415b","#172a39","#00193c","#000a14"],"wide":false}]},{"img":"media/24273d3e5a0c56290fb47cd4b456c3cf.jpg","asset":"24273d3e5a0c56290fb47cd4b456c3cf","t":"焙煎-baisen-","ja":false,"m":"コーヒー豆","d":"「コーヒー」をモチーフとし、その一連のプロセスの中でも「焙煎」という行為に着目してリサーチを行った。\n\n日常生活の中で見過ごされがちな現象に目を向け、焙煎がもつ美しさを丁寧に伝えることをテーマとして制作した。\n\n焙煎が進むにつれて、コーヒー豆は「形」「色味」「香り」が変化していく。本作品では、それらの複雑な変化をそれぞれの要素に分解し、\n・実物の展示と解説\n・1粒のコーヒー豆で起こる変化を表現したアニメーション\n・焙煎による色味の変化を示す展示\nの3つのプロセスを通して表現した。\n\n焙煎全体の変化と、1粒の中で起こる小さな変化の両方を体感的に理解することで、「焙煎」がもつ魅力をより深く感じられる展示を目指した。","pal":["#eedbc7","#7e8d94","#6b5f57","#46311c","#140f0c"],"wide":false,"alt":""},{"img":"media/4b6b7901ca85bb9a85b156e81bf67328.jpg","asset":"4b6b7901ca85bb9a85b156e81bf67328","t":"ヌード画","ja":false,"m":"木炭,鉛筆","d":"1450mm × 1000mm","pal":["#fbfbfb","#9c9c9c","#8a8a8a","#5f5f5f","#1d1d1d"],"wide":true,"alt":""},{"img":"media/6cdf2a37c30f12051abd83635b339a55.jpg","asset":"6cdf2a37c30f12051abd83635b339a55","t":"身体の溜まり","ja":false,"m":"墨,ロール紙,スチレンボード,水性ペン等","d":"人が視覚的に変化を感じる時、そこには自分の中での予測の｢流れ｣があると思う。\nその予測は今まで一人一人の概念や経験に起因し、それらが多様な関わり方をすることで｢変化｣としての印象を持ち始めると考えた。\n\nそこで身体を動かす(あるいは動かさない)状況に限定してリサーチを深めた。\n\nレイヤー、線、時間、墨などの方法で運動を記述し、それぞれの記述方法から見えてくる面白さや違いを組み合わせる。\nそこから新たに更に｢変化｣としての色幅が広がるのではないかと考え制作した。","pal":["#e6dfdc","#c8c1bc","#b8afa9","#7f766e","#252120"],"wide":false,"alt":"","more":[{"img":"media/d7ea6a9d7ef77bb442e638679fa64484.jpg","asset":"d7ea6a9d7ef77bb442e638679fa64484","pal":["#ffffff","#efe7e1","#dbd2cc","#c7c0ba","#5d554f"],"wide":true},{"img":"media/4c64fc208c8c4c14a3552e9a14aef02e.jpg","asset":"4c64fc208c8c4c14a3552e9a14aef02e","pal":["#e4dad3","#cec3bc","#beb4ae","#9a8f89","#141210"],"wide":false},{"img":"media/9f46ff664edab938f69c39121af1bc5c.jpg","asset":"9f46ff664edab938f69c39121af1bc5c","pal":["#ffffff","#e4dbd6","#d7cdc3","#ccc2bd","#797168"],"wide":true}]},{"img":"media/bd1a110fbbdd8ff83e353e9ca56f2329.jpg","asset":"bd1a110fbbdd8ff83e353e9ca56f2329","t":"Connect(ing) Pain","ja":false,"m":"インスタレーション","d":"自分達が物心つく頃にはネットワークやアクセスが世界規模で整備されていた。\n今、世界中の人々は否が応でも｢繋がり｣を求められ、求める。\n\nその繋がりは人々に安心感やユーモアを与える。\nしかし、繋がることで息が詰まるほど残酷なものも自分の一部になっていく。\n\n繋がりは自分の体を蝕み、煌めきを放っていく。","pal":["#cfcfcf","#414141","#1c1c1c","#0c0c0c","#040404"],"wide":false,"alt":"","more":[{"img":"media/88f21704ae753950d5a8475b01b69011.jpg","asset":"88f21704ae753950d5a8475b01b69011","pal":["#f5f5f5","#b7b7b7","#717171","#272727","#050505"],"wide":true},{"img":"media/ac7b3851a461be5de79b6f52df4281db.jpg","asset":"ac7b3851a461be5de79b6f52df4281db","pal":["#f1f2ef","#303133","#1e201f","#0f1010","#060606"],"wide":false}]}];
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+const gallery=document.getElementById("gallery"),HOME_MAX=5;
+const quiet=matchMedia("(prefers-reduced-motion: reduce)");
+const isMov=w=>!!(w.video||(w.parts&&w.parts.length));
+// 動画にサムネイルがないときは、最初のコマを見せる
+const vsrc=w=>w.img?w.video:w.video+"#t=0.1";
+// トップや Archive で静かに流すもの：重い動画は短いプレビュー、それ以外は動画そのもの
+const ambSrc=w=>w.preview||(w.video?vsrc(w):"");
+const arStyle=w=>Number(w.ar)>0?` style="--ar:${Number(w.ar)}"`:"";
+const playSoft=v=>{if(quiet.matches)return;const p=v.play();if(p&&p.catch)p.catch(()=>{})};
+// ── 動画の読み込み方。スマホ（とくに iPhone）は、保存場所から動画を細切れに読む方式でしか再生しないため、
+// 保存場所がそれに応じないと再生できない。そこでスマホでは、動画を丸ごと読み込んでから再生する。
+// PC はそのまま再生し、もし失敗したら同じ方法に切り替える
+const MOBILE=matchMedia("(pointer: coarse)").matches||/iP(hone|ad|od)/.test(navigator.userAgent);
+const blobCache=new Map();
+function blobFor(url,onp){
+  if(!blobCache.has(url)){
+    blobCache.set(url,(async()=>{
+      const r=await fetch(url);if(!r.ok)throw new Error("status "+r.status);
+      const total=Number(r.headers.get("content-length"))||0,type=(r.headers.get("content-type")||"video/mp4").split(";")[0];
+      let b;
+      if(onp&&r.body&&r.body.getReader){const rd=r.body.getReader(),cs=[];let got=0;
+        for(;;){const {done,value}=await rd.read();if(done)break;cs.push(value);got+=value.length;if(total)onp(got/total)}
+        b=new Blob(cs,{type})}
+      else{const raw=await r.blob();b=raw.type?raw:new Blob([raw],{type})}
+      return URL.createObjectURL(b);
+    })().catch(e=>{blobCache.delete(url);throw e}));
+  }
+  return blobCache.get(url);
+}
+function useVideo(v,url,o={}){
+  v.dataset.want=url;
+  const go=src=>{if(v.dataset.want!==url)return;v.src=src;if(o.play!==false)playSoft(v)};
+  const viaBlob=()=>{const [base,frag]=url.split("#");return blobFor(base,o.onp).then(b=>go(frag?b+"#"+frag:b))};
+  if(MOBILE)return viaBlob();
+  v.addEventListener("error",()=>{if(v.dataset.want===url&&!String(v.currentSrc||v.src).startsWith("blob:"))viaBlob().catch(()=>{})},{once:true});
+  go(url);return Promise.resolve();
+}
+// 一覧の動画：はじめて画面に入ったときに読み込み、そのあとは再生と一時停止だけ
+const wake=v=>{if(!v.dataset.want)useVideo(v,v.dataset.src).catch(()=>{});else playSoft(v)};
+const loopTag=(w,pre)=>`<video data-src="${esc(ambSrc(w))}"${w.img?` poster="${esc(w.img)}"`:""} muted loop playsinline preload="${pre}" aria-hidden="true"${arStyle(w)}></video>`;
+const stillTag=w=>w.img?`<img src="${esc(w.img)}" alt="${esc(w.alt||w.t)}" loading="lazy">`:`<span class="mph"${arStyle(w)}>MOVIE</span>`;
+const playMark=w=>isMov(w)?'<span class="play" aria-hidden="true"></span>':"";
+// 表紙のほかにある写真・動画
+const extraOf=w=>(w.more||[]).filter(m=>m&&(m.img||isMov(m)));
+const cnt=w=>{const n=extraOf(w).length;return n?`<span class="cnt">+${n}</span>`:""};
+document.getElementById("count").textContent=String(WORKS.length).padStart(2,"0");
+// トップには新しい順に最大5点だけ。それ以上は Archive で振り返る。動画は音を消して静かに流す
+const ambient=[];
+WORKS.slice(0,HOME_MAX).forEach((w,i)=>{
+  const b=document.createElement("button");b.className="piece"+(w.wide?" wide":"");b.type="button";b.setAttribute("aria-label",w.t+" の詳細を見る");
+  const cap=`<span class="cap${w.ja?" ja":""}" aria-hidden="true">${esc(w.t)}${cnt(w)}</span>`;
+  if(ambSrc(w)){b.innerHTML=loopTag(w,"metadata")+cap;const v=b.querySelector("video");v.muted=true;ambient.push(v)}
+  else b.innerHTML=stillTag(w)+playMark(w)+cap;
+  b.addEventListener("click",()=>show(i));
+  gallery.appendChild(b);
+});
+// 画面に入っている動画だけ再生する
+if("IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?wake(e.target):e.target.pause()),{threshold:.2});
+  ambient.forEach(v=>io.observe(v));
+}else ambient.forEach(wake);
+document.getElementById("more").hidden=WORKS.length===0;
+const alist=document.getElementById("alist");
+WORKS.forEach((w,i)=>{
+  const b=document.createElement("button");b.className="aitem";b.type="button";
+  const loop=ambSrc(w);
+  b.innerHTML=`<span class="thumb">${loop?loopTag(w,w.img?"none":"metadata"):stillTag(w)}${playMark(w)}</span><span class="t${w.ja?" ja":""}">${esc(w.t)}${cnt(w)}</span><span class="m">${esc(w.m)}</span>`;
+  if(loop){const v=b.querySelector("video");v.muted=true;
+    b.addEventListener("pointerenter",()=>wake(v));b.addEventListener("pointerleave",()=>v.pause())}
+  b.addEventListener("click",()=>show(i));
+  alist.appendChild(b);
+});
+// カーソルのない端末（スマホなど）では、画面の真ん中に来た作品が色づき、タイトルが出る
+if(matchMedia("(hover: none)").matches&&"IntersectionObserver" in window){
+  const fo=new IntersectionObserver(es=>es.forEach(e=>{
+    e.target.classList.toggle("on",e.isIntersecting);
+    // Archive の動画は、スマホでは画面の真ん中に来たときに流す
+    const v=e.target.matches(".aitem")&&e.target.querySelector("video[data-src]");
+    if(v){if(e.isIntersecting)wake(v);else v.pause()}
+  }),{rootMargin:"-40% 0px -40% 0px"});
+  document.querySelectorAll(".piece,.aitem").forEach(el=>fo.observe(el));
+}
+// #archive のときだけ Archive を表示、それ以外はトップ
+const home=document.getElementById("home"),arch=document.getElementById("archive-view");
+function route(){
+  const h=location.hash,isA=h==="#archive";
+  home.hidden=isA;arch.hidden=!isA;
+  if(isA)scrollTo({top:0});
+  else if(h&&h.length>1){const el=document.getElementById(h.slice(1));if(el)el.scrollIntoView()}
+}
+addEventListener("hashchange",route);setTimeout(route,0);
+
+// メールアドレスをコピー（使えない環境では文字を選択状態にする）
+const copyBtn=document.getElementById("copyMail"),mailEl=document.getElementById("mail");
+copyBtn.addEventListener("click",()=>{
+  const sel=()=>{const r=document.createRange();r.selectNodeContents(mailEl);const s=getSelection();s.removeAllRanges();s.addRange(r)};
+  try{navigator.clipboard.writeText(mailEl.textContent).then(()=>{copyBtn.textContent="Copied";setTimeout(()=>copyBtn.textContent="Copy",1800)},sel)}catch(e){sel()}
+});
+
+// スクロール位置に合わせて背景を明るく。最初の画面はそのままの色味
+const lift=document.getElementById("lift");
+function brighten(){
+  // 最初の画面から Works の入口までで、ゆるやかに上限まで明るくし、あとは保つ
+  const w=document.getElementById("works"),start=innerHeight*.25;
+  const end=arch.hidden?Math.max(w.offsetTop-innerHeight*.15,start+1):start+innerHeight*.6;
+  const p=Math.min(Math.max((scrollY-start)/(end-start),0),1);
+  lift.style.opacity=(p*p*(3-2*p)*.3).toFixed(3);
+}
+addEventListener("scroll",brighten,{passive:true});addEventListener("resize",brighten);addEventListener("hashchange",()=>requestAnimationFrame(brighten));brighten();
+const view=document.getElementById("view"),vVid=document.getElementById("vVid"),vLoad=document.getElementById("vLoad"),vLoadT=document.getElementById("vLoadT"),vStrip=document.getElementById("vStrip");let cur=0,curM=0;
+// 重い動画は、分けて保存した部分を順に読み込み、つなぎ直してから再生する（各部分の先頭16バイトは目印なので外す）
+const PART_HDR=16;let loadCtl=null,heavy={key:"",url:""};
+async function loadHeavy(w,onp){
+  const key=w.parts.join(",");
+  if(heavy.key===key)return heavy.url;
+  if(loadCtl)loadCtl.abort();const ctl=loadCtl=new AbortController();
+  const total=Number(w.vsize)||0,out=[];let got=0;
+  for(const id of w.parts){
+    const r=await fetch("/_blob/"+id,{signal:ctl.signal});
+    if(!r.ok)throw new Error("status "+r.status);
+    let b;
+    if(r.body&&r.body.getReader){const rd=r.body.getReader(),cs=[];for(;;){const {done,value}=await rd.read();if(done)break;cs.push(value);got+=value.length;if(total)onp(got/total)}b=new Blob(cs)}
+    else{b=await r.blob();got+=b.size;if(total)onp(got/total)}
+    out.push(b.slice(PART_HDR));
+  }
+  if(loadCtl===ctl)loadCtl=null;
+  if(heavy.url)URL.revokeObjectURL(heavy.url);
+  heavy={key,url:URL.createObjectURL(new Blob(out,{type:w.vtype||"video/mp4"}))};
+  return heavy.url;
+}
+function stopDetail(){delete vVid.dataset.want;if(loadCtl){loadCtl.abort();loadCtl=null}vLoad.hidden=true;if(vVid.dataset.src){vVid.pause();vVid.removeAttribute("src");delete vVid.dataset.src;vVid.load()}}
+// 一枚分（写真または動画）を大きく見せる。表紙も、ほかの写真・動画も同じ形
+function showMedia(w,m){
+  if(isMov(m)){
+    const key=m.video||m.parts.join(",");
+    vImg.hidden=true;vImg.removeAttribute("src");vVid.hidden=false;
+    if(vVid.dataset.src!==key){
+      stopDetail();
+      if(m.img)vVid.poster=m.img;else vVid.removeAttribute("poster");
+      vVid.style.setProperty("--ar",Number(m.ar)>0?String(Number(m.ar)):"16/9");
+      vVid.muted=true;vVid.dataset.src=key;
+      if(m.video){
+        if(MOBILE){vLoad.hidden=false;vLoadT.textContent="読み込み中"}
+        useVideo(vVid,vsrc(m),{onp:p=>{if(vVid.dataset.src===key)vLoadT.textContent=`読み込み中 ${Math.min(99,Math.round(p*100))}%`}})
+          .then(()=>{if(vVid.dataset.src===key)vLoad.hidden=true})
+          .catch(()=>{if(vVid.dataset.src===key)vLoadT.textContent="動画を読み込めませんでした"});
+      }
+      else{
+        vLoad.hidden=false;vLoadT.textContent="読み込み中";
+        loadHeavy(m,p=>{if(vVid.dataset.src===key)vLoadT.textContent=`読み込み中 ${Math.min(99,Math.round(p*100))}%`})
+          .then(url=>{if(vVid.dataset.src!==key)return;vLoad.hidden=true;vVid.src=url;playSoft(vVid)})
+          .catch(e=>{if(vVid.dataset.src!==key||(e&&e.name==="AbortError"))return;vLoadT.textContent="動画を読み込めませんでした"});
+      }
+    }else if(vVid.getAttribute("src"))playSoft(vVid);
+    vVid.setAttribute("aria-label",w.t);
+  }else{
+    stopDetail();vVid.hidden=true;vImg.hidden=false;vImg.src=m.img;vImg.alt=(m===w&&w.alt)||w.t;
+  }
+}
+function renderStrip(w){
+  const ms=[w,...extraOf(w)];
+  vStrip.hidden=ms.length<2;
+  if(ms.length<2){vStrip.innerHTML="";return}
+  vStrip.innerHTML=ms.map((m,k)=>{const amb=ambSrc(m);
+    const t=m.img?`<img src="${esc(m.img)}" alt="">`:(amb?`<video src="${esc(amb)}" muted playsinline preload="metadata"></video>`:"");
+    return `<button type="button" data-k="${k}" aria-label="${esc(w.t)} ${k+1}/${ms.length}" aria-current="${k===curM}">${t}${isMov(m)?'<span class="sp" aria-hidden="true"></span>':""}</button>`}).join("");
+  vStrip.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{
+    curM=+b.dataset.k;showMedia(w,ms[curM]);
+    vStrip.querySelectorAll("button").forEach(x=>x.setAttribute("aria-current",String(x===b)));
+  }));
+}
+function show(i){
+  cur=(i+WORKS.length)%WORKS.length;curM=0;const w=WORKS[cur];
+  showMedia(w,w);renderStrip(w);
+  vTitle.textContent=w.t;vTitle.className=w.ja?"ja":"";
+  vMedium.textContent=w.m;vText.textContent=w.d;
+  if(!view.open)view.showModal();
+}
+view.addEventListener("close",stopDetail);
+vPrev.addEventListener("click",()=>show(cur-1));
+vNext.addEventListener("click",()=>show(cur+1));
+vClose.addEventListener("click",()=>view.close());
+view.addEventListener("click",e=>{if(e.target===view)view.close()});
+view.addEventListener("keydown",e=>{if(e.target===vVid)return;if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1)});
+
+// ── 昼と夜：見ている人の時計に合わせる。開いたまま夕方6時・朝6時をまたいだら、背景をゆっくり切り替える
+const root=document.documentElement,todVeil=document.getElementById("todveil");let todForce=null;
+const todAuto=()=>{const h=new Date().getHours();return (h>=6&&h<18)?"day":"night"};
+const isNight=()=>root.dataset.tod==="night";
+const SPD=parseFloat(getComputedStyle(root).getPropertyValue("--spd"))||1;
+function applyTod(fade){
+  const m=todForce||todAuto();if(root.dataset.tod===m)return;
+  if(!fade||quiet.matches){root.dataset.tod=m;return}
+  todVeil.style.transition="none";todVeil.style.background=getComputedStyle(root).getPropertyValue("--mist");todVeil.style.opacity="1";
+  requestAnimationFrame(()=>{root.dataset.tod=m;requestAnimationFrame(()=>{todVeil.style.transition="opacity 2.4s ease";todVeil.style.opacity="0"})});
+}
+setInterval(()=>applyTod(true),60000);
+// ── 帯：画面を埋めるほど太い3本のグラデーションの帯。ほとんど面として見えるくらい。
+// 傾きと位置がゆっくり変わり、色は二色のあいだを行き来し続ける
+const calm=matchMedia("(prefers-reduced-motion: reduce)");
+const cv=document.getElementById("waves"),ctx=cv.getContext("2d");
+const PAD=90;
+const WAVES=[
+  {y:.12,th:.62,tilt:-.10,ca:[188,211,224],cb:[238,199,175],cp:19,ph:0},
+  {y:.56,th:.70,tilt:.07, ca:[238,199,175],cb:[199,218,205],cp:27,ph:2},
+  {y:1.0,th:.60,tilt:-.05,ca:[199,218,205],cb:[188,211,224],cp:23,ph:4}
+];
+const swells=[];
+let W=0,H=0,dpr=1;
+function size(){dpr=Math.min(devicePixelRatio||1,1);W=innerWidth+PAD*2;H=innerHeight+PAD*2;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+size();addEventListener("resize",size);
+const mix=(a,b,t)=>a.map((v,i)=>Math.round(v+(b[i]-v)*t));
+// x, y はキャンバス上の座標（画面座標 + PAD）
+function edgeY(w,x,t,side){
+  const cy=(w.y+.08*Math.sin(t*.06+w.ph)+.03*Math.sin(t*.13+w.ph*2))*H;
+  const tilt=w.tilt+.06*Math.sin(t*.045+w.ph*1.3);
+  const half=w.th*H/2*(1+.08*Math.sin(t*.06+w.ph));
+  let y=cy+(x-W/2)*tilt+side*half;
+  swells.forEach(s=>{if(s.w===w){const d=(x-s.x)/(W*.2);y+=side*s.a*H*Math.exp(-d*d)}});
+  return y;
+}
+// 色は5色のあいだを、帯ごと・位置ごとに少しずつずれながら流れ続ける
+const PAL=[[188,211,224],[238,199,175],[199,218,205],[214,204,224],[230,214,190]];
+function palAt(u){u=((u%PAL.length)+PAL.length)%PAL.length;const i=Math.floor(u),f=u-i,e=f*f*(3-2*f);return mix(PAL[i],PAL[(i+1)%PAL.length],e)}
+function drawWaves(t){
+  ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation=isNight()?"screen":"multiply";
+  WAVES.forEach((w,i)=>{
+    const g=ctx.createLinearGradient(0,0,W,0),base=t/26+i*1.7+(w.sh||0);
+    g.addColorStop(0,`rgb(${palAt(base)})`);
+    g.addColorStop(.5,`rgb(${palAt(base+1.2+.4*Math.sin(t*.05+i))})`);
+    g.addColorStop(1,`rgb(${palAt(base+2.3)})`);
+    ctx.fillStyle=g;ctx.beginPath();
+    for(let x=0;x<=W;x+=24)ctx.lineTo(x,edgeY(w,x,t,-1));
+    for(let x=W;x>=0;x-=24)ctx.lineTo(x,edgeY(w,x,t,1));
+    ctx.closePath();ctx.fill();
+  });
+}
+// ── 線：遠くから見ると一本の線に見える、太い色の揺らぎの帯。
+// 色は線に沿って流れ続け、太さも少しずつ脈打つ
+const lc=document.getElementById("lines"),lctx=lc.getContext("2d");
+const LINES=[
+  // 太い線
+  {x:.74,y:.45,ang:84, th:24,ph:0,  sp:1, sw:20,fa:.09, mx:.22,my:.08,fx:.07,fy:.05},
+  {x:.12,y:.40,ang:104,th:19,ph:3.7,sp:-1,sw:26,fa:.07, mx:.18,my:.12,fx:.06,fy:.08},
+  // 細い線
+  {x:.30,y:.58,ang:-34,th:7, ph:2.1,sp:-1,sw:30,fa:.12, mx:.28,my:.18,fx:.09,fy:.07},
+  {x:.58,y:.22,ang:22, th:6, ph:4.3,sp:1, sw:34,fa:.10, mx:.26,my:.20,fx:.08,fy:.11},
+  {x:.50,y:.82,ang:-6, th:8, ph:5.9,sp:1, sw:24,fa:.11, mx:.30,my:.10,fx:.10,fy:.06}
+];
+function sizeLines(){lc.width=W*dpr;lc.height=H*dpr;lctx.setTransform(dpr,0,0,dpr,0,0)}
+sizeLines();addEventListener("resize",sizeLines);
+function drawLines(t){
+  lctx.clearRect(0,0,W,H);lctx.globalCompositeOperation=isNight()?"screen":"multiply";
+  const vm=Math.max(W,H)/100,L=Math.hypot(W,H)*1.1;
+  LINES.forEach((l,i)=>{
+    const a=(l.ang+l.sw*Math.sin(t*l.fa+l.ph)+6*Math.sin(t*l.fa*2.3+l.ph*1.7))*Math.PI/180;   // 傾きが大きく変わる
+    const cx=(l.x+l.mx*Math.sin(t*l.fx+l.ph))*W,cy=(l.y+l.my*Math.cos(t*l.fy+l.ph*1.3))*H;   // 横へ縦へ移動する
+    const dx=Math.cos(a),dy=Math.sin(a),nx=-dy,ny=dx;
+    const x0=cx-dx*L/2,y0=cy-dy*L/2,x1=cx+dx*L/2,y1=cy+dy*L/2;
+    l.geo={cx,cy,dx,dy,hw:l.th*vm/2};
+    const g=lctx.createLinearGradient(x0,y0,x1,y1),base=i*1.9+l.sp*t/9+(l.sh||0);
+    for(let k=0;k<=6;k++)g.addColorStop(k/6,`rgb(${palAt(base+k*.75+.3*Math.sin(t*.2+k))})`);
+    lctx.fillStyle=g;lctx.beginPath();
+    const N=40;
+    for(let k=0;k<=N;k++){const u=k/N-.5,hw=l.th*vm/2*(1+.18*Math.sin(u*7+t*.35+l.ph)+.08*Math.sin(u*19-t*.6));
+      lctx.lineTo(cx+dx*u*L+nx*hw,cy+dy*u*L+ny*hw)}
+    for(let k=N;k>=0;k--){const u=k/N-.5,hw=l.th*vm/2*(1+.18*Math.sin(u*7+t*.35+l.ph+1.1)+.08*Math.sin(u*17+t*.5));
+      lctx.lineTo(cx+dx*u*L-nx*hw,cy+dy*u*L-ny*hw)}
+    lctx.closePath();lctx.fill();
+  });
+}
+// ノイズの粒を一枚つくって敷く
+(()=>{const n=document.createElement("canvas");n.width=n.height=240;const c=n.getContext("2d"),im=c.createImageData(240,240);
+  for(let i=0;i<im.data.length;i+=4){const v=128+(Math.random()+Math.random()+Math.random()-1.5)*70;im.data[i]=im.data[i+1]=im.data[i+2]=v;im.data[i+3]=255}
+  c.putImageData(im,0,0);const u=`url(${n.toDataURL()})`;document.getElementById("grain").style.backgroundImage=u;document.documentElement.style.setProperty("--noise",u)})();
+
+// ── クリック：円は押された向きにたわみ、波はその場所がふくらむ。
+// 動きの途中で重ねて押すほど、たわみもふくらみも深くなっていく
+const circles=[...document.querySelectorAll(".g.c, .orb")].map((el,i)=>{
+  const R=()=>Math.random();
+  // 円ごとに違う周期と振れ幅で、空気の中をふわふわ漂う
+  return {el,s:0,v:0,ang:0,hs:0,hsT:0,fx:[.05+R()*.05,.11+R()*.08],fy:[.06+R()*.05,.13+R()*.09],ax:[3+R()*4,1+R()*1.5],ay:[3+R()*4,1+R()*1.5],ph:R()*100}
+});
+function floatAt(c,t){
+  const vm=Math.max(innerWidth,innerHeight)/100,T=t+c.ph;
+  const x=(c.ax[0]*Math.sin(T*c.fx[0]*2*Math.PI/1.25)+c.ax[1]*Math.sin(T*c.fx[1]*2*Math.PI/1.25+1.3))*vm;
+  const y=(c.ay[0]*Math.sin(T*c.fy[0]*2*Math.PI/1.25+.7)+c.ay[1]*Math.cos(T*c.fy[1]*2*Math.PI/1.25))*vm-Math.sin(T*.9)*.8*vm;
+  return x.toFixed(1)+"px "+y.toFixed(1)+"px";
+}
+function hitCircle(c,x,y){
+  const r=c.el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,rad=r.width/2;
+  const dx=x-cx,dy=y-cy,d=Math.hypot(dx,dy);return d<rad*.97?{dx,dy,d,rad}:null;
+}
+document.addEventListener("pointerdown",e=>{
+  if(calm.matches||e.target.closest("a,button,dialog"))return;
+  let best=null,info=null;
+  circles.forEach(c=>{const i=hitCircle(c,e.clientX,e.clientY);if(i&&(!best||i.rad<info.rad)){best=c;info=i}});
+  if(best){
+    const mass=Math.max(info.rad/120,.6),edge=Math.min(info.d/info.rad,1);
+    best.ang=Math.atan2(info.dy,info.dx);
+    best.v+=(.4+.5*edge)*(.8+Math.random()*.4)/Math.sqrt(mass);
+    best.hsT+=(Math.random()<.5?-1:1)*(16+Math.random()*16);   // 押すたびに色が少しずれ、そのまま残る
+    return;
+  }
+  const px=e.clientX+PAD,py=e.clientY+PAD;
+  // 次に線：当たった線は色の並びが少し進み、そのまま残る
+  let lb=null,ld=Infinity;
+  LINES.forEach(l=>{if(!l.geo)return;const g=l.geo,d=Math.abs((px-g.cx)*(-g.dy)+(py-g.cy)*g.dx);if(d<g.hw&&d<ld){ld=d;lb=l}});
+  if(lb){lb.shT=(lb.shT||0)+.35+Math.random()*.3;return}
+  // 円にも線にも当たらなければ、いちばん近い帯をふくらませ、色を少し進める
+  let wb=null,dist=Infinity;
+  WAVES.forEach(w=>{const top=edgeY(w,px,now,-1),bot=edgeY(w,px,now,1);
+    if(py>top&&py<bot){const mid=(top+bot)/2,d=Math.abs(py-mid);if(d<dist){dist=d;wb=w}}});
+  if(wb){wb.shT=(wb.shT||0)+.3+Math.random()*.25;
+    const near=swells.find(s=>s.w===wb&&Math.abs(s.x-px)<W*.1);
+    if(near){near.v+=.1*(.8+Math.random()*.4)}else swells.push({w:wb,x:px,a:0,v:.1*(.8+Math.random()*.4)})}
+});
+
+let now=0,last=performance.now();
+function frame(ts){
+  const dt=Math.min((ts-last)/1000,.05);last=ts;now=ts/1000*SPD;
+  circles.forEach(c=>{
+    const mass=Math.max(c.el.offsetWidth/240,.6),k=7/mass,damp=1.1/Math.sqrt(mass);
+    c.v+=(-k*c.s-damp*c.v)*dt;c.s+=c.v*dt;c.s=Math.max(-.5,Math.min(.5,c.s));
+    if(Math.abs(c.hsT-c.hs)>.05){c.hs+=(c.hsT-c.hs)*Math.min(dt*1.6,1);c.el.style.setProperty("--hs",c.hs.toFixed(2)+"deg")}
+    if(!calm.matches)c.el.style.translate=floatAt(c,now);
+    if(Math.abs(c.s)<1e-4&&Math.abs(c.v)<1e-4){c.s=0;c.v=0;c.el.style.transform="";return}
+    const a=c.ang+"rad",n=(-c.ang)+"rad";
+    c.el.style.transform=`rotate(${a}) scale(${1-c.s},${1+c.s*.7}) rotate(${n})`;
+  });
+  for(let i=swells.length-1;i>=0;i--){const s=swells[i];
+    s.v+=(-3*s.a-.9*s.v)*dt;s.a+=s.v*dt;s.a=Math.max(-.28,Math.min(.28,s.a));
+    if(Math.abs(s.a)<1e-4&&Math.abs(s.v)<1e-4)swells.splice(i,1)}
+  [...WAVES,...LINES].forEach(o=>{if(o.shT!==undefined)o.sh=(o.sh||0)+(o.shT-(o.sh||0))*Math.min(dt*1.4,1)});
+  drawWaves(calm.matches?0:now);drawLines(calm.matches?0:now);
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+</script>
+</body>
+</html>
